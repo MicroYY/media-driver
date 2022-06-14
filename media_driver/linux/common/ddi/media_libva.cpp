@@ -2725,6 +2725,9 @@ VAStatus DdiMedia_CreateSurfaces2(
         case VA_FOURCC_I420:
             expected_fourcc = VA_FOURCC_I420;
             break;
+        case VA_FOURCC_UYVY:
+            expected_fourcc = VA_FOURCC_UYVY;
+            break;
 #endif
         default:
             DDI_ASSERTMESSAGE("Invalid VAConfigAttribRTFormat: 0x%x. Please uses the format defined in libva/va.h", format);
@@ -4814,6 +4817,7 @@ VAStatus DdiMedia_DeriveImage (
     {
     case Media_Format_YV12:
     case Media_Format_I420:
+    case Media_Format_IYUV:
         vaimg->format.bits_per_pixel    = 12;
         vaimg->num_planes               = 3;
         vaimg->pitches[0]               = mediaSurface->iPitch;
