@@ -90,7 +90,7 @@ MOS_STATUS VPFeatureManagerXe_Xpm_Base::CheckFeatures(void * params, bool &bApgF
         return MOS_STATUS_SUCCESS;
     }
 
-    if (disableVeboxOutput && disableSfc)
+    if (disableVeboxOutput && disableSfc && !pvpParams->bForceToRender)
     {
         VP_PUBLIC_NORMALMESSAGE("Fallback to legacy since both vebox output and sfc being disabled.");
         return MOS_STATUS_SUCCESS;

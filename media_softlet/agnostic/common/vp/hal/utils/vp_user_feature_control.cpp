@@ -372,5 +372,10 @@ MOS_STATUS VpUserFeatureControl::Update(PVP_PIPELINE_PARAMS params)
 
     m_ctrlVal = m_ctrlValDefault;
 
+    if (params->bForceToRender)
+    {
+        ForceRenderPath(true);
+    }
+
     return MOS_STATUS_SUCCESS;
 }
