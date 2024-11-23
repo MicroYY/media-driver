@@ -53,7 +53,7 @@ MOS_STATUS MediaCopyState_Xe_Hpm::Initialize(  PMOS_INTERFACE  osInterface, MhwI
     m_mhwInterfacesXeHpm = mhwInterfaces;
 
     MCPY_CHK_STATUS_RETURN(MediaCopyBaseState::Initialize(osInterface));
-
+    return MOS_STATUS_NULL_POINTER;
     // blt init
     if (nullptr == m_bltState)
     {
